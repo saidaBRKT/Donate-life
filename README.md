@@ -1,5 +1,5 @@
 <h1>About</h1>
-l application don du sang agit comme un rôle important dans le sauvetage de la vie des êtres humains .ce projet est développé pour encourager les citoyens marocains à s'entraider en donnant leur sang.
+L'application " don du sang " agit comme un rôle important dans le sauvetage de la vie des êtres humains .ce projet est développé pour encourager les citoyens marocains à s'entraider en donnant leur sang.
 L'objectif principal du développement de cette application est de réduire considérablement le temps passé à rechercher le bon donneur et la disponibilité du sang nécessaire. Ainsi, cette application fournit les informations requises en un rien de temps et aide également à une prise de décision plus rapide.
 
 <h1>Features</h1>
