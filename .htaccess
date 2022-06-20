@@ -1,0 +1,7 @@
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteBase /Donate-life/
+
+RewriteRule ^([-a-zA-a0-9]+)$ index.php?page=$1

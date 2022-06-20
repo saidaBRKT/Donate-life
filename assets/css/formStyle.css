@@ -1,0 +1,48 @@
+  #bgnav, .c1 button{
+    background: linear-gradient(-145deg, rgba(246,191,159,1) 0%, rgba(219,138,222,1) 100%);
+  }
+  /* home */
+  main{
+    height:100vh;
+  }
+  .c1 button{
+    background: linear-gradient(-145deg, rgba(246,191,159,1) 0%, rgba(219,138,222,1) 100%);
+    border: 2px solid #FFF;
+    color:white;
+    }
+  .c1 button:hover{
+    background-color:rgba(246,191,159,1);
+    border: 2px solid #FFF;
+    color: white;
+  }
+  .c1 p{
+  color:rgba(219,138,222,1);
+  }
+.footer{
+  background: linear-gradient(-145deg, rgba(246,191,159,1) 0%, rgba(219,138,222,1) 100%);
+}
+  
+  /* sign In _ sign Up */
+  .content{
+    height:89vh;
+    width:100%;
+  }
+  .child2{
+    border:3px solid rgba(219,138,222,1);
+    border-radius: 20px;
+  }
+  .child2 div:first-child{
+    height:100%;
+    width:100%;
+  }
+  .login, .signUp{
+    background: linear-gradient(-145deg, rgba(246,191,159,1) 0%, rgba(219,138,222,1) 100%);
+  }
+  
+  /*dashboard ------------------------------------------------------------------*/
+.card{
+  border: 3px solid gray;
+}
+
+  
+

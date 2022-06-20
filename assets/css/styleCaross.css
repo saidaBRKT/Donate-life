@@ -1,0 +1,261 @@
+
+
+/* ---------------------------------------------
+Table of contents
+------------------------------------------------
+03. global styles
+04. header
+05. banner
+06. features
+07. testimonials
+08. contact
+09. footer
+10. preloader
+11. search
+12. portfolio
+
+--------------------------------------------- */
+/* 
+---------------------------------------------
+font & reset css
+--------------------------------------------- 
+*/
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900"); */
+/* 
+---------------------------------------------
+reset
+--------------------------------------------- 
+*/
+
+
+
+
+
+
+
+
+/*
+---------------------------------------------
+global styles
+--------------------------------------------- 
+*/
+html,
+body {
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ::selection {
+  background: #dc8cdb;
+  color: #fff;
+} */
+
+/* ::-moz-selection {
+  background: #dc8cdb;
+  color: #fff;
+} */
+
+/* @media (max-width: 991px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  .mobile-top-fix {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+  .mobile-bottom-fix {
+    margin-bottom: 30px;
+  }
+  .mobile-bottom-fix-big {
+    margin-bottom: 60px;
+  }
+} */
+
+/* .main-button-gradient a {
+  font-size: 13px;
+  color: #fff;
+  background: rgb(219,138,222);
+  background: linear-gradient(-145deg, rgba(219,138,222,1) 0%, rgba(246,191,159,1) 100%);
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s;
+} */
+
+/* .main-button-gradient a:hover {
+  background: rgb(219,138,222);
+  background: linear-gradient(-145deg, rgba(219,138,222,1) 0%, rgba(246,191,159,1) 100%);
+  opacity: 0.9;
+} */
+
+/* .white-button a {
+  font-size: 13px;
+  color: #dc8cdb;
+  background-color: #fff;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s;
+} */
+
+/* .white-button a:hover {
+  opacity: 0.9;
+}
+
+.text-button a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #dc8cdb;
+  text-decoration: underline !important;
+  transition: all .3s;
+}
+
+.text-button a:hover {
+  opacity: 0.75;
+} */
+
+section {
+  margin-top: 140px;
+}
+footer section{
+  margin-top: 0;
+}
+
+ #contact-section {
+  padding-top: 20px;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 5;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  text-align: center;
+  margin-bottom: 60px;
+} 
+
+.section-heading h6 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+
+.section-heading h4 {
+  margin-top: 10px;
+  line-height: 40px;
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: capitalize;
+  color: #111;
+}
+
+.section-heading h4 em {
+  font-style: normal;
+  color: #dc8cdb;
+}
+
+.section-heading p {
+  margin-top: 30px;
+}
+
+
+/* 
+---------------------------------------------
+testimonials
+--------------------------------------------- 
+*/
+
+section.testimonials {
+  position: relative;
+  /* background-image: url(../images/cta-left-image); */
+  /* background-size: cover; */
+  /* height:50vh; */
+}
+
+/* section.testimonials:before {
+  position: absolute;
+  content: '';
+  background-color: red;
+   background-image: url(../images/testimonials-left-dec.png); 
+  left: 0px;
+  top: -140px;
+  width: 593px;
+  height: 352px;
+  z-index: 1;
+}
+
+section.testimonials:after {
+  position: absolute;
+  content: '';  background-color: green;
+  background-image: url(../images/testimonials-right-dec.png);
+  right: 0px;
+  bottom: -140px;
+  width: 632px;
+  height: 352px;
+  z-index: 1;
+} */
+
+.testimonials .item {
+  border-radius: 15px;
+  padding: 30px;
+  background-color: rgb(220, 220, 220);
+  margin: 15px;
+  transition: all .3s;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials .item:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+}
+
+.testimonials .item p {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.testimonials .item h4 {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 900;
+  position: relative;
+}
+
+.testimonials .item span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #dc8cdb;
+}
+
+.testimonials .item img {
+  max-width: 44px;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  bottom: 30px
+}
+
+.testimonials .owl-dots {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.testimonials .owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0px 4px;
+}
+
+.testimonials .owl-dots .active {
+  background-color: #dc8cdb;
+}
+
