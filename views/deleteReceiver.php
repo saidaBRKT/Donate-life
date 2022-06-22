@@ -1,8 +1,5 @@
 <?php
-// if(!isset($_SESSION["logged"])){
-//   header('location: signIn');
-//  die();
-// }
+
   if(isset($_POST['cin'])){
     $exit = new ReceiverController();  
     $id_U = $exit->getOne();

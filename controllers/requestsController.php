@@ -33,11 +33,39 @@ class requestsController{
             echo $result;
         }
     }
+    public function addReq_Receiver($id){
+        $data = array(
+            'name'      => $_POST['name'],
+            'phone'       => $_POST['phone'],
+            'city'    => $_POST['city'],
+            'type'     => $_POST['type'],
+            'groupe' => $_POST['groupe'],
+            'case' => $_POST['case'],
+            'date' => $_POST['date'],
+            'id_user' => $id,
+        );
+        $result = requests::add($data);
+        if($result === 'ok'){
+            header('location: receiver_Requests'); 
+        }else{
+            echo $result;
+        }
+    }
 
     public function getOneReqs(){
         if(isset($_POST['id'])){
             $data = array(
                 'id' => $_POST['id']
+            );
+        }
+        $req = requests::getReqs($data);
+        return $req;
+    }
+
+    public function getOneReqR(){
+        if(isset($_POST['id_Receiver'])){
+            $data = array(
+                'id' => $_POST['id_Receiver']
             );
         }
         $req = requests::getReqs($data);
@@ -66,6 +94,29 @@ class requestsController{
         }
     }
 
+    //::::::::::::::::::: Receiver
+    public function updateReq(){
+        if(isset($_POST['update'])){
+            $data = array(
+                'id'      => $_POST['id'],
+                'name'      => $_POST['name'],
+                'phone'       => $_POST['phone'],
+                'city'    => $_POST['city'],
+                'type'     => $_POST['type'],
+                'groupe' => $_POST['groupe'],
+                'case' => $_POST['case'],
+                'date' => $_POST['date'],
+            );
+            $result = requests::update($data);
+            if($result === 'ok'){
+                // echo 'ok';
+                 header('location: receiver_Requests');
+            }else{
+                echo $result;
+            }
+        }
+    }
+
     public function deleteReqs(){
         $data['id'] = $_POST['id'];
         $result = requests::delete($data);
@@ -74,6 +125,15 @@ class requestsController{
         }else{
             echo $result;
         }
+}
+public function deleteReq(){
+    $data['id'] = $_POST['id'];
+    $result = requests::delete($data);
+    if($result === 'ok'){
+        header('location: receiver_Requests');
+    }else{
+        echo $result;
+    }
 }
 public function CountAllReqs($id){  
 $req = requests::CountAll($id);

@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION["logged"])){
+  header('location: signIn');
+ die();
+}
 $data = new requestsController();
 $reqs = $data->getAllRequests($_SESSION['id']);
   if(isset($_POST['add'])){

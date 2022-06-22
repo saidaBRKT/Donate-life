@@ -87,4 +87,9 @@ class receiver{
             echo 'erreur' . $ex->getMessage();
         }
     }
+    static public function CountAll(){
+        $stmt = DB::connect()->prepare('SELECT count(*) FROM receiver');
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 }

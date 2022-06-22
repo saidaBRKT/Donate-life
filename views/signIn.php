@@ -1,11 +1,13 @@
 <?php
-// if(isset($_SESSION["logged"])){
-//   if($_SESSION["role"]=='admin')
-//     header('location: dashboard');
-//   if($_SESSION["role"]=='donor')
-//     header('location: pageDonor');
-// die();
-// }
+if(isset($_SESSION["logged"])){
+  if($_SESSION["role"]=='admin')
+    header('location: dashboard');
+  if($_SESSION["role"]=='donor')
+    header('location: pageDonor');
+    if($_SESSION["role"]=='donor')
+    header('location: pageReceiver');
+die();
+}
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $message="";
   if(empty($_POST['email']) || empty($_POST['password'])){
@@ -39,6 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         border: 2px solid #FFF;
         border-raduis:7px;
         background-color: #FF2156;
+        color:white;
       }
     </style>
 </head>
@@ -47,23 +50,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <main class="container-fluid px-0 d-flex flex-column">
       <!-- Navbar -->
 
-      <nav class="navbar navbar-expand-lg navbar-light fs-5" id="bgnav">
-         <div class="container">
-          <a class="navbar-brand" href="dashboard">
-            <img
-              src="assets/images/logo_donate.png"
-              alt="logo"
-              width="150px"
-              height="50px"
-            />
-          </a>
-          <div class="d-flex flex-row">
-           
-          </div>
-          <a href="signIn" class=" signIN text-decoration-none btn px-2 px-sm-5 fw-bold d-flex d-sm-none" ><i class="bi bi-box-arrow-in-right"></i></a>
-          <a href="signIn" class=" signIN text-decoration-none btn px-2 px-sm-5 fw-bold d-none d-sm-flex" >Sign IN</a>
-        </div>
-      </nav>
+      <?php
+  require_once "views/includes/navbar_sIN_sUP.php";
+?>
     <!--End Navbar -->
     <!-- content -->
     <div class="content container d-flex justify-content-center align-item-center">

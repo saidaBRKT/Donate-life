@@ -7,17 +7,17 @@
         <span  data-bs-target="#offcanvasExample"><i class="bi bi-chevron-right"></i></span>
       </button>
         <!-- offcanvas trigger -->
-        <a class="navbar-brand  ms-sm-5 " href="#">
+        <a class="navbar-brand  ms-sm-5 " href="Home">
           <img src="assets/images/logo_donate.png" alt="logo" width="140px" height="60px">
         </a>
         </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse search" id="navbarSupportedContent" >
         <form class="d-flex ms-auto">
             <div class="input-group my-3 my-lg-0">
-                <input id="search" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input id="search" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn clrBTN" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
               </div>
         </form>
@@ -30,7 +30,7 @@
 <div class="offcanvas offcanvas-start sidebar-nav text-dark navigation" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div>
         <div class="d-flex justify-content-center align-item-center py-3 d-block d-lg-none">
-           <a href="#"><img src="assets/images/logo_donate.png" alt="logo" width="190px" height="60px" ></a> 
+           <a href="Home"><img src="assets/images/logo_donate.png" alt="logo" width="190px" height="60px" ></a> 
         </div>
     </div>
     <div class="offcanvas-body ">

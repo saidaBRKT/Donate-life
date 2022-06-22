@@ -1,8 +1,4 @@
 <?php
-// if(!isset($_SESSION["logged"])){
-//   header('location: signIn');
-//  die();
-// }
 if(isset($_POST['idAccept'])){
   $exitReqs = new requestsController();
   $exitReqs->updateAcceptStat();

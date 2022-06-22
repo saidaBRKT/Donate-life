@@ -78,7 +78,7 @@ $reqs = $data->getAllReqAccepted();
 <main class="container-fluid px-0 d-flex flex-column">
 
   <?php
-  require_once "navbar_home.php";
+  require_once "views/includes/navbar_home.php";
 ?>
 
  <!-- content 3 -->
@@ -207,7 +207,11 @@ $reqs = $data->getAllReqAccepted();
 </div>
 </div>
 </div>
-<!-- :::::::::::::::::::::::::::: -->
-
+<!-- Footer -->
+<?php
+  require_once "views/includes/footer_Home.php";
+?>
+<!-- End Footer -->
+</main>
 </body>
 </html>

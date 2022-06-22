@@ -1,8 +1,8 @@
 <?php
-// if(!isset($_SESSION["logged"])){
-//   header('location: signIn');
-//  die();
-// }
+if(!isset($_SESSION["logged"])){
+  header('location: signIn');
+ die();
+}
 if(isset($_POST['id'])){
   $exitReqs = new donatController();
   $exitReqs->deleteReqs();
@@ -34,7 +34,7 @@ $nbr =$data->CountAllReqs($_SESSION['id']);
     <title>Request for donation blood</title>
 </head>
 <body>
-<?php require_once "sidebar-donor.php";?>
+<?php require_once "views/includes/sidebar-donor.php"; ?>
 <main class="container-fluid px-0 pt-5 bg-light">
   <?php if($profile == null) : ?>
   <div class="w-100 text-center ">
@@ -180,72 +180,7 @@ $nbr =$data->CountAllReqs($_SESSION['id']);
 <?php } }?>
 
 <!-- Footer -->
-  <footer class="footer text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset text-decoration-none"><i class="fab fa-facebook-f"></i></a>
-        <a href="" class="me-4 text-reset text-decoration-none"><i class="fab fa-twitter"></i></a>
-        <a href="" class="me-4 text-reset text-decoration-none"> <i class="fab fa-google"></i></a>
-        <a href="" class="me-4 text-reset text-decoration-none"><i class="fab fa-linkedin"></i></a>
-        <a href="" class="me-4 text-reset text-decoration-none"><i class="fab fa-github"></i></a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- End Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column 1-->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
-          <!-- Content -->
-          <a class="navbar-brand" href="Home">
-            <img src="./assets/images/logo_donate.png"alt="logo" width="150px" height="50px"/>
-          </a>
-        </div>
-        <!--End Grid column 1-->
-
-        <!-- Grid column 2-->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
-          <p><a href="#!" class="text-reset">Home</a></p>
-          <p><a href="#!" class="text-reset">About Us</a></p>
-          <p><a href="#!" class="text-reset">Contact Us</a></p>
-        </div>
-        <!--End Grid column 2-->
-
-        <!-- Grid column 3-->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> Youssoufia, NY 10012</p>
-          <p><i class="fas fa-envelope me-3"></i>DonatLife51@gmail.com</p>
-          <p><i class="fas fa-phone me-3"></i> (+212) 05 23 45 67 88</p>
-        </div>
-        <!--end Grid column 3-->
-      </div>
-      <!--End Grid row -->
-      </div>
-    </section>
-    <!--End Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">© 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">DonateLife.com</a>
-    </div>
-    <!--End Copyright -->
-  </footer>
+<?php require_once "views/includes/footer_donor.php"; ?>
   <!-- end Footer--> 
 </main>
 <script src="./assets/js/my-bootstrap.js"></script>

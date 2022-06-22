@@ -55,7 +55,7 @@
                         $_SESSION['logged'] = true;
                         $_SESSION['email']  = $result->email;
                         $_SESSION['role']  = $result->role;
-                        $_SESSION['cin']  = $result->cin;
+                        $_SESSION['id']  = $result->id;
                         
                         // print_r( $_SESSION['role']);
                         // die();

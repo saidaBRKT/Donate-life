@@ -16,11 +16,12 @@ $pages_donor=['Home','signIn','logout','pageDonor','tester','reqDonor','reqForBl
              'updateReq','deleteReqForB','upReqDonat','addReqDonat','deleteReqDonat'
              ,'library','article','signUp'];
 
-$pages_receiver=['Home','signIn','signUp','logout','pageReceiver'];
+$pages_receiver=['Home','signIn','signUp','logout','pageReceiver','receiver_Requests',
+                'upReq_Receiver','deleteReq_Receiver'];
 
              if(isset($_SESSION['logged']) && $_SESSION['logged'] === true ){
               if(isset($_GET['page'])){
-                if(in_array($_GET['page'],$pages_admin) || in_array($_GET['page'],$pages_donor )){
+                if(in_array($_GET['page'],$pages_admin) || in_array($_GET['page'],$pages_donor) || in_array($_GET['page'],$pages_receiver)){
                     if(in_array($_GET['page'],$pages_donor) && $_SESSION['role'] == 'donor'){
                         $page = $_GET['page'];
                         $home->index($page);
@@ -28,8 +29,8 @@ $pages_receiver=['Home','signIn','signUp','logout','pageReceiver'];
                         $page = $_GET['page'];
                         $home->index($page);
                     }else if(in_array($_GET['page'],$pages_receiver) && $_SESSION['role'] == 'receiver'){
-                        $page = $_GET['page'];
-                        $home->index($page);
+                      $page = $_GET['page'];
+                      $home->index($page);
                     }else{
                         include('views/includes/404.php');
                     }                       
@@ -38,6 +39,7 @@ $pages_receiver=['Home','signIn','signUp','logout','pageReceiver'];
                 }
               }else{
                 $home->index('Home');
+                // include('views/includes/404.php');
               }
             }else if(isset($_GET['page'])
             ){

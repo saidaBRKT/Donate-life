@@ -1,8 +1,8 @@
 <?php
-// if(!isset($_SESSION["logged"])){
-//   header('location: signIn');
-//  die();
-// }
+if(!isset($_SESSION["logged"])){
+  header('location: signIn');
+ die();
+}
      if(isset($_POST['id'])){
         $exitDonors = new donorsController();
         $donor = $exitDonors->getOneDonors();

@@ -65,5 +65,9 @@ class receiverController{
             echo $result;
         }   
     }
+    public function CountAllReceivers(){  
+        $rec = receiver::CountAll();
+        return $rec; 
+      }
 
 }    

@@ -1,5 +1,8 @@
 <?php
-
+if(!isset($_SESSION["logged"])){
+  header('location: signIn');
+ die();
+}
 $data = new receiverController();
 $receivers = $data->getAllReceiver();
 
@@ -34,7 +37,7 @@ $receivers = $data->getAllReceiver();
   </head>
 <body>
 <?php
-  require_once "sidebar.php";
+require_once "views/includes/sidebar.php";
 ?>
 <main class="h-100 mt-5 pt-5 d-flex justify-content-center align-item-center">
   <div class="container mx-5 my-5 ">

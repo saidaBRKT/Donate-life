@@ -1,8 +1,8 @@
 <?php
-// if(!isset($_SESSION["logged"])){
-//   header('location: signIn');
-//  die();
-// }
+if(!isset($_SESSION["logged"])){
+  header('location: signIn');
+ die();
+}
 if(isset($_POST['id'])){
    $exitReqs = new requestsController();
   $req = $exitReqs->getOneReqs();
@@ -14,7 +14,20 @@ else{
 if(isset($_POST['update'])){
   $exitReqs = new requestsController();
   $exitReqs->updateReqs($_SESSION['id']);
-}  
+}
+// ::::::::::::::::::::::::
+if(isset($_POST['id_Receiver'])){
+  $exitReqs = new requestsController();
+  $req = $exitReqs->getOneReqR();
+}
+else{
+  Redirect::to('receiver_requests');
+}
+
+if(isset($_POST['update'])){
+  $exitReqs = new requestsController();
+  $exitReqs->updateReq($_SESSION['id']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

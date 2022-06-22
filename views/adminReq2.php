@@ -1,8 +1,8 @@
 <?php
-// if(!isset($_SESSION["logged"])){
-//   header('location: signIn');
-//  die();
-// }
+if(!isset($_SESSION["logged"])){
+  header('location: signIn');
+ die();
+}
 $data = new donatController();
 $reqs = $data->getAllWaiting();
 ?>
@@ -35,7 +35,7 @@ $reqs = $data->getAllWaiting();
   </head>
 <body>
 <?php
-  require_once "sidebar.php";
+require_once "views/includes/sidebar.php";
 ?>
 <main class="h-100 mt-5 pt-5 bg-light d-flex justify-content-center align-item-center" style="min-height:90vh">
     <!-- content -->

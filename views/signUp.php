@@ -16,13 +16,15 @@ if(isset($_POST['save'])){
     <title>DonateLife</title>
     <style>
       .signIN{
-        border: 2px solid rgba(219,138,222,1);
+        border: 2px solid #FF2156;
         border-raduis:7px;
+        color:#FF2156;
       }
       .signIN:hover{
         border: 2px solid #FFF;
         border-raduis:7px;
-        background-color: rgba(219,138,222,1);
+        background-color: #FF2156;
+        color:white;
       }
       .btnradio{
         backgound-color: gray;
@@ -36,24 +38,9 @@ if(isset($_POST['save'])){
 
 <main class="container-fluid px-0 d-flex flex-column">
       <!-- Navbar -->
-
-      <nav class="navbar navbar-expand-lg navbar-light fs-5" id="bgnav">
-         <div class="container">
-          <a class="navbar-brand" href="dashboard">
-            <img
-              src="assets/images/logo_donate.png"
-              alt="logo"
-              width="150px"
-              height="50px"
-            />
-          </a>
-          <div class="d-flex flex-row">
-           
-          </div>
-          <a href="signIn" class="signIN text-decoration-none btn text-white px-2 px-sm-5 fw-bold d-flex d-sm-none"><i class="bi bi-box-arrow-in-right"></i></a>
-          <a href="signIn" class="signIN text-decoration-none btn text-white px-2 px-sm-5 fw-bold d-none d-sm-flex">Sign IN</a>
-        </div>
-      </nav>
+      <?php
+  require_once "views/includes/navbar_sIN_sUP.php";
+?>
     <!--End Navbar -->
     <!-- content -->
     <div class="content container d-flex justify-content-center align-item-center">

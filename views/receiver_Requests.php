@@ -4,13 +4,13 @@ if(!isset($_SESSION["logged"])){
  die();
 }
 $data = new requestsController();
-$reqs = $data->getAllRequests($_SESSION['cin']);
+$reqs = $data->getAllRequests($_SESSION['id']);
 if(isset($_POST['add'])){
   $newReq=new requestsController();
-  $newReq->addReqs($_SESSION['id']);
+  $newReq->addReq_Receiver($_SESSION['id']);
 }
-// $dataReqs = new requestsController();
-// $nbrReqs =$dataReqs->CountAllReqs($_SESSION['id']);
+$dataReqs = new requestsController();
+$nbrReqs =$dataReqs->CountAllReqs($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@ if(isset($_POST['add'])){
     <link rel="stylesheet" href="./assets/css/styleDonor.css"><title>Document</title>
 </head>
 <body>
-<?php require_once "views/includes/sidebar-donor.php"; ?>
+<?php require_once "views/includes/sidebar-receiver.php"; ?>
 <main class="container-fluid px-0 h-100 bg-light pb-0" >
   <!-- content -->
   <div class="container" style="min-height:70vh">
@@ -132,13 +132,13 @@ if(isset($_POST['add'])){
             N° : <?php echo $req['id'] ?>
           </div>
           <div class="col-6 d-flex justify-content-center align-item-center px-0 my-3">
-            <form method="POST" action="updateReq" class="text-center w-100 d-flex justify-content-end">
-              <input type="hidden" value="<?php echo $req['id'] ?>" name="id">
+            <form method="POST" action="upReq_Receiver" class="text-center w-100 d-flex justify-content-end">
+              <input type="hidden" value="<?php echo $req['id'] ?>" name="id_Receiver">
               <button class="my-auto d-flex  border-0 bg-white p-0">
                 <img src="assets/images/Edit.png" alt="logo" width="50px" height="50px">
               </button>
             </form >
-            <form method="POST" action="deleteReqForB" class="text-center d-flex justify-content-end">
+            <form method="POST" action="deleteReq_Receiver" class="text-center d-flex justify-content-end">
               <input type="hidden" value="<?php echo $req['id'] ?>" name="id"> 
               <button class="w-100 my-auto btn d-flex">
                 <img src="assets/images/poubelle.png" alt="logo" width="40px" height="40px">
