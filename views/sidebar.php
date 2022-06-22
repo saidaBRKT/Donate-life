@@ -21,20 +21,6 @@
                 <button class="btn clrBTN" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
               </div>
         </form>
-        <!-- <ul class="navbar-nav mb-2 mb-lg-0">
-          
-         
-          <li class="nav-item dropdown ms-1">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-fill"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Notification</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul> 
-        </ul>    -->
       </div>
     </div>
   </nav>
@@ -44,7 +30,7 @@
 <div class="offcanvas offcanvas-start sidebar-nav text-dark navigation" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div>
         <div class="d-flex justify-content-center align-item-center py-3 d-block d-lg-none">
-            <img src="assets/images/logo_donate.png" alt="logo" width="190px" height="60px" >
+           <a href="#"><img src="assets/images/logo_donate.png" alt="logo" width="190px" height="60px" ></a> 
         </div>
     </div>
     <div class="offcanvas-body ">
@@ -57,14 +43,6 @@
                 </a>
             </li>
 
-
-            <!-- <li class="d-flex mb-3 py-O">
-                <a href="requests" class="nav-link px-3 d-flex py-0">
-                <span class=""><img src="assets/images/requests.png" alt="logo" width="50px" height="50px"></span>
-                  <span class="text-white my-auto">Requests</span>
-                </a>
-            </li> -->
-           <!--  -->
             <li class="mb-3 py-0">
               <a class="nav-link px-3 d-flex py-0 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <span class=""><img src="assets/images/requests.png" alt="logo" width="50px" height="50px"></span>
@@ -76,14 +54,12 @@
                   <ul class="navbar-nav ps-3">
                     <li class="h-50 my-2 me-2">
                       <a href="adminReq1" class="nav-link px-3 h-50">
-                      <!-- <span><img src="assets/images/requests.png" alt="logo" width="50px" height="50px"></span> -->
-                      <span class="text-white my-auto">For Blood</span>
+                        <span class="text-white my-auto">For Blood</span>
                       </a>
                     </li>
                     <li class="h-50 my-2 me-2">
                       <a href="adminReq2" class="nav-link px-3 h-50">
-                      <!-- <span><img src="assets/images/requests.png" alt="logo" width="50px" height="50px"></span> -->
-                      <span class="text-white my-auto">For Donation</span>
+                        <span class="text-white my-auto">For Donation</span>
                       </a>
                     </li>
                   </ul>
@@ -98,9 +74,9 @@
                 </a>
             </li>
             <li class="d-flex">
-                <a href="patients" class="nav-link px-3 d-flex py-0">
+                <a href="receiver" class="nav-link px-3 d-flex py-0">
                 <span class=""><img src="assets/images/patient.png" alt="logo" width="50px" height="50px"></span>
-                  <span class="text-white my-auto">Patients</span>
+                  <span class="text-white my-auto">Receivers</span>
                 </a>
         </ul>
         <div class="d-flex position-absolute bottom-0">

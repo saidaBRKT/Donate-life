@@ -6,11 +6,6 @@
 
          public function register(){
              if(isset($_POST['save'])){
-                //  $options = [
-                //      'cost' => 12
-                //  ];
-                //  $password = password_hash($_POST['password'],
-                //  PASSWORD_BCRYPT,$options);
                  $data = array(
                      'email' => $_POST['email'],
                      'password' => $_POST['password'],
@@ -36,14 +31,14 @@
                 PASSWORD_BCRYPT,$options);
                
                 if($result->email === $_POST['email'] && password_verify($_POST['password'],$password)){
-                //     $check = $_POST['check'] ?? ''; 
-                //     if($check === "on"){
-                //         setcookie('email', $_POST["email"], time() + 3600 * 24);
-                //         setcookie('password', $_POST["password"], time() + 3600 * 24);
-                // }else{
-                //         setcookie('email');
-                //         setcookie('password');
-                // }
+                    $check = $_POST['check'] ?? ''; 
+                    if($check === "on"){
+                        setcookie('email', $_POST["email"], time() + 3600 * 24);
+                        setcookie('password', $_POST["password"], time() + 3600 * 24);
+                }else{
+                        setcookie('email');
+                        setcookie('password');
+                }
                     if( $result->role == 'admin'){
                         $_SESSION['logged'] = true;
                         $_SESSION['email']  = $result->email;
@@ -56,6 +51,15 @@
                         $_SESSION['role']  = $result->role;
                         $_SESSION['id']  = $result->id;
                         header('location: pageDonor');
+                    }else if($result->role == 'receiver'){
+                        $_SESSION['logged'] = true;
+                        $_SESSION['email']  = $result->email;
+                        $_SESSION['role']  = $result->role;
+                        $_SESSION['cin']  = $result->cin;
+                        
+                        // print_r( $_SESSION['role']);
+                        // die();
+                        header('location: pageReceiver');
                     }
                 
 
@@ -120,6 +124,15 @@
                 echo $result;
             }   
         }  
+        public function deleteU($id){
+            $result = user::delete($id);
+            if($result === 'ok'){
+                // echo 'ok';
+                header('location: receiver');
+            }else{
+                echo $result;
+            }   
+        } 
 
         
 

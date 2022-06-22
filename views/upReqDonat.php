@@ -1,19 +1,19 @@
 <?php
-
- 
-     if(isset($_POST['id'])){
-         $exitReqs = new donatController();
-         $req = $exitReqs->getOneReqs();
-    }
-    else{
-       Redirect::to('reqDonor');
-    }
-    
-    
-    if(isset($_POST['update'])){
-       $exitReqs = new donatController();
-       $exitReqs->updateReqs($_SESSION['id']);
-  }
+// if(!isset($_SESSION["logged"])){
+//   header('location: signIn');
+//  die();
+// }
+if(isset($_POST['id'])){
+    $exitReqs = new donatController();
+    $req = $exitReqs->getOneReqs();
+}
+else{
+  Redirect::to('reqDonor');
+}
+if(isset($_POST['update'])){
+  $exitReqs = new donatController();
+  $exitReqs->updateReqs($_SESSION['id']);
+}
   
 ?>
 <!DOCTYPE html>

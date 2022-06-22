@@ -1,7 +1,7 @@
 <?php
 
-$data = new donorsController();
-$donors = $data->getAllDonors();
+$data = new receiverController();
+$receivers = $data->getAllReceiver();
 
 ?>
 
@@ -41,11 +41,11 @@ $donors = $data->getAllDonors();
     <div>
     <div class="d-flex justify-content-between">
       <div>
-       <h1>Donors List :</h1>
+       <h1>Receivers List :</h1>
       </div>
       <div>
-       <a href="form-ADD" class="d-flex d-md-none btn h-100 "><i class="bi bi-plus h-100  px-2" style="color:#FF2156;border:1px solid #FF2156;border-radius:5px" onclick="displayADD()"></i></a>
-       <a href="form-ADD" class="btn p-0 h-100 w-100 d-none d-md-flex"><h4 class="h-100 pt-2 px-3" style="color:#FF2156;border:1px solid #FF2156;border-radius:5px" onclick="displayADD()">Add Donor</h4></a>
+       <a href="ADD_receiver" class="d-flex d-md-none btn h-100 "><i class="bi bi-plus h-100  px-2" style="color:#FF2156;border:1px solid #FF2156;border-radius:5px" onclick="displayADD()"></i></a>
+       <a href="ADD_receiver" class="btn p-0 h-100 w-100 d-none d-md-flex"><h4 class="h-100 pt-2 px-3" style="color:#FF2156;border:1px solid #FF2156;border-radius:5px" onclick="displayADD()">Add Receiver</h4></a>
       </div>
     </div>
     <?php
@@ -55,32 +55,30 @@ $donors = $data->getAllDonors();
         <table class="table" style="min-width:600px">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">CIN</th>
               <th scope="col">Name</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Age</th>
               <th scope="col">Blood type</th>
               <th scope="col">Phone</th>
+              <th scope="col">Adress</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-          <?php foreach($donors as $donor): ?>
+          <?php foreach($receivers as $receiver): ?>
             <tr>
-              <th scope="row"><?php echo $donor['id'] ?></th>
-              <td class="d-name"><?php echo $donor['name'] ?></td>
-              <td><?php echo $donor['gender'] ?></td>
-              <td><?php echo $donor['age'] ?></td>
-              <td><?php echo $donor['bloodType'] ?></td>
-              <td><?php echo $donor['phone'] ?></td> 
+              <th scope="row"><?php echo $receiver['cin'] ?></th>
+              <td class="d-name"><?php echo $receiver['name'] ?></td>
+              <td><?php echo $receiver['bloodType'] ?></td>
+              <td><?php echo $receiver['phone'] ?></td> 
+              <td><?php echo $receiver['address'] ?></td>
               
               <td class="d-flex justify-content-start fs-4 text-dark border-0">
-              <form method="POST" action="form-up">
-                <input type="hidden" name="id" value="<?php echo  $donor['id'];?>">
+              <form method="POST" action="UP_receiver">
+                <input type="hidden" name="cin" value="<?php echo  $receiver['cin'];?>">
                 <button class="border-0 bg-white p-0"><i class="bi bi-pencil-square"></i></button>            
               </form>
-              <form method="POST" action="deleteDonor">
-              <input type="hidden" name="id" value="<?php echo $donor['id'];?>">
+              <form method="POST" action="deleteReceiver">
+              <input type="hidden" name="cin" value="<?php echo $receiver['cin'];?>">
               <button type="submit" class="border-0 bg-white p-0"><i class="bi bi-trash-fill ms-3"></i></button>
               </form>
                </td>

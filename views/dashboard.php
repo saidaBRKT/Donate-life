@@ -1,10 +1,14 @@
 <?php
-  $dataDonors = new donorsController();
-  $nbrDonors =$dataDonors->CountAllDonors();
-  $dataReqs = new requestsController();
-  $nbrReqs =$dataReqs->CountAllRequests();
-  $data = new donatController();
-  $nbr =$data->CountAllRequests();
+// if(!isset($_SESSION["logged"])){
+//   header('location: signIn');
+//  die();
+// }
+$dataDonors = new donorsController();
+$nbrDonors =$dataDonors->CountAllDonors();
+$dataReqs = new requestsController();
+$nbrReqs =$dataReqs->CountAllRequests();
+$data = new donatController();
+$nbr =$data->CountAllRequests();
 ?>
 <!DOCTYPE html>
 <html lang="en">

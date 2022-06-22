@@ -14,8 +14,9 @@ $reqs = $data->getAllReqAccepted();
     <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="./assets/css/styleCaross.css">
-
     <!--  -->
+    
+    <!-- <link rel="stylesheet" href="./assets/css/styleDonor.css">   -->
     <link rel="stylesheet" href="./assets/css/my-bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -23,7 +24,12 @@ $reqs = $data->getAllReqAccepted();
     <title>DonateLife</title>
 </head>
 <style>
-  .signIN{
+  .navig{
+    /* background-color: #2D353C; */
+    background: linear-gradient(-145deg, rgba(246,191,159,1) 0%, rgba(219,138,222,1) 100%);
+
+}
+ .signIN{
         border: 2px solid #FF2156;
         border-raduis:7px;
         color:#FF2156;
@@ -44,29 +50,32 @@ $reqs = $data->getAllReqAccepted();
       }
       .footer{
   background: linear-gradient(-145deg, rgba(246,191,159,1) 0%, rgba(219,138,222,1) 100%);
-}
-.clrReq{
+ }
+ .clrReq{
   color:rgba(219,138,222,1);
   font-size:bolde;
-}
+ }
+ .qst{
+  background-color:rgb(220, 218, 218);
+  color:black;
+ }
+ .qst:hover{
+  background-color:rgba(219,138,222,1);
+  color:white;
+ }
+ .qst a:hover{
+  background-color:rgba(219,138,222,1);
+  color:white;
+ }
+ 
 </style>
 <body>
 
 <main class="container-fluid px-0 d-flex flex-column">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light fs-5" id="bgnav">
-      <div class="container">
-      <a class="navbar-brand" href="Home">
-        <img src="./assets/images/logo_donate.png"alt="logo"width="150px"height="50px"/>
-      </a>
-      <div class="d-flex flex-row">
-        
-      </div>
-      <a href="signIn" class=" signIN text-decoration-none btn px-2 px-sm-5 fw-bold d-flex d-sm-none"><i class="bi bi-box-arrow-in-right"></i></a>
-      <a href="signIn" class=" signIN text-decoration-none btn px-2 px-sm-5 fw-bold d-none d-sm-flex">Sign IN</a>
-      </div>
-  </nav>
+  <?php
+  require_once "navbar_home.php";
+?>
   <!--End Navbar -->
 
   <!-- content 1 -->
@@ -77,7 +86,7 @@ $reqs = $data->getAllReqAccepted();
       </div> 
       <div class="w-75 h-100 text-center text-md-start  d-lg-flex justify-content-center align-item-center"> 
         <h1 class="my-auto">
-          There are simple   <br>
+          There are a simple   <br>
           Things that can<br>
           <p>SAVE LIFES</p><br>
           <a href="#"><button class="btn-block btn-lg ">JOIN US NOW !</button></a>
@@ -201,7 +210,7 @@ $reqs = $data->getAllReqAccepted();
   </div> -->
 
   <!--  -->
-  <section class="testimonials" id="testimonials">
+  <section class="testimonials mb-5" id="testimonials">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -225,64 +234,14 @@ $reqs = $data->getAllReqAccepted();
                 <img src="assets/images/quote.png" alt="">
             </div>
             <?php endforeach; ?>
-            <!-- <div class="item">
-              <p>“think about our website first when you need free HTML templates for your website”</p>
-                <h4>David Martin</h4>
-                <span>CTO of Tech Company</span>
-                <img src="assets/images/quote.png" alt="">
-
-            </div>
-            <div class="item">
-              <p>“just think about our website wherever you need free templates for your website”</p>
-                <h4>Sophia Whity</h4>
-                <span>CEO and Co-Founder</span>
-                <img src="assets/images/quote.png" alt="">
-            </div> -->
-            <!-- <div class="item">
-              <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
-                <h4>Helen Shiny</h4>
-                <span>Tech Officer</span>
-                <img src="assets/images/quote.png" alt="">
-            </div>
-            <div class="item">
-              <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
-                <h4>George Soft</h4>
-                <span>Gadget Reviewer</span>
-                <img src="assets/images/quote.png" alt="">
-            </div>
-            <div class="item">
-              <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
-                <h4>Andrew Hall</h4>
-                <span>Marketing Manager</span>
-                <img src="assets/images/quote.png" alt="">
-            </div>
-            <div class="item">
-              <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
-                <h4>Maxi Power</h4>
-                <span>Fashion Designer</span>
-                <img src="assets/images/quote.png" alt="">
-            </div>
-            <div class="item">
-              <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
-                <h4>Olivia Too</h4>
-                <span>Creative Designer</span>
-                <img src="assets/images/quote.png" alt="">
-            </div> -->
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End content 2 -->
-
-  <!-- <div class="container-fluid h-75 d-flex justify-content-end pe-0">
-    <div class="d-none d-lg-block">
-      <img src="assets/images/testimonials-right-dec.png" alt="left" height="250px" width="600px"> 
-    </div>
-  </div> -->
-
-  <!-- content 2 -->
-  <div class="container-fluid d-flex flex-column flex-md-row mt-5 px-0 h-100">
+ 
+  <!-- content 4 -->
+  <div class="container-fluid d-flex flex-column flex-md-row mt-5 px-0 h-100 mb-5">
     <div class="c2 w-100 w-md-50">
       <img src="assets/images/Enthusiastic-pana.svg" alt="">
     </div>
@@ -292,15 +251,14 @@ $reqs = $data->getAllReqAccepted();
          <span class="title fs-1">Be</span><br>
          <span style="color:rgba(219,138,222,1)" class="fs-1 fw-bold">Hero</span><br>
          <span class="title fs-1">Now</span><br>
-         <a href="#"><button class="mt-5 btn-block btn-lg ">JOIN US NOW !</button></a>
+         <a href="signIn"><button class="mt-5 btn-block btn-lg ">JOIN US NOW !</button></a>
         </div> 
       </div>
     </div>
-  </div>
-  <!-- End content 3 -->    
+  </div>    
 
   <!-- Footer -->
-  <footer class="footer text-center text-lg-start bg-light text-muted">
+  <footer class="footer text-center text-lg-start bg-light text-muted mt-5">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
@@ -414,6 +372,29 @@ $reqs = $data->getAllReqAccepted();
 			  }
 		  }
 	  })
+
+    </script>
+    <script>
+  const A1=document.getElementById("A1");
+  const A2=document.getElementById("A2");
+  const A3=document.getElementById("A3");
+  const A4=document.getElementById("A4");
+  const A5=document.getElementById("A5");
+  function A1(){
+    A1.style.display="block";
+    A2.style.display="none";
+    A3.style.display="none";
+  }
+  function A2(){
+    A1.style.display="none";
+    A2.style.display="block";
+    A3.style.display="none";
+  }
+  function A3(){
+    A1.style.display="none";
+    A2.style.display="none";
+    A3.style.display="block";
+  }
 
     </script>
 </body>

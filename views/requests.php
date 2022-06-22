@@ -1,7 +1,6 @@
 <?php
 $data = new requestsController();
 $reqs = $data->getAllRequests();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +8,7 @@ $reqs = $data->getAllRequests();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Requests</title>
     <link rel="stylesheet" href="assets/css/my-bootstrap.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/formStyle.css"/>

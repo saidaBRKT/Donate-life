@@ -44,7 +44,7 @@ function validateInput(ev){
 }
  
 
-document.getElementById("").addEventListener("submit",(e)=>{
+document.getElementById("myF").addEventListener("submit",(e)=>{
     validateInput(e);
 });
 

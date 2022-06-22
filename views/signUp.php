@@ -72,8 +72,8 @@ if(isset($_POST['save'])){
             <input type="radio" class="btn-check" value="donor" name="role" id="btnradio1" autocomplete="off" checked>
             <label class="btn btn-outline-secondary btnradio" for="btnradio1">Donor</label>
 
-            <input type="radio" class="btn-check" value="patient" name="role" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-secondary btnradio" for="btnradio2" >patient</label>
+            <input type="radio" class="btn-check" value="receiver" name="role" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-secondary btnradio" for="btnradio2" >Receiver</label>
           </div>
         <small></small>
       </div>

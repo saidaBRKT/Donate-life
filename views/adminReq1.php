@@ -1,15 +1,10 @@
-
 <?php
+// if(!isset($_SESSION["logged"])){
+//   header('location: signIn');
+//  die();
+// }
 $data = new requestsController();
 $reqs = $data->getAllWaiting();
-
-// if(isset($_POST['idAccept'])){
-//   // echo 'ok';
-
-//  $exitReqs = new requestsController($_POST['idAccept']);
-//  echo $_POST['idAccept'];
-//  $exitReqs->updateAcceptStat();
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,137 +1,76 @@
 <?php
 $data = new requestsController();
 $reqs = $data->getAllRequests($_SESSION['id']);
-
-// if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if(isset($_POST['add'])){
-  $newReq=new donatController();
-  $newReq->addReqs($_SESSION['id']);
-
- }
-
- ?>
+    $newReq=new donatController();
+    $newReq->addReqs($_SESSION['id']);
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/my-bootstrap.css">
-    <link rel="stylesheet" href="./assets/css/styleDonor.css">
-    <!-- <link rel="stylesheet" href="./assets/css/formStyle.css"/> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"> -->
-    
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/my-bootstrap.css">
+  <link rel="stylesheet" href="./assets/css/styleDonor.css">
+  <title>Document</title>
 </head>
 <body>
-    <!-- nav -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navig">
-        <div class="container-fluid">
-          <a class="navbar-brand  py-0" href="#">
-            <img src="assets/images/logo_donate.png" alt="logo" width="140px" height="60px">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse mb-0" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-lg-0 ">
-              <li class="nav-item">
-                <a class="nav-link my-auto text-center" aria-current="page" href="pageDonor">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-center " href="tester">Test</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-center  active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Requests
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li class="w-100"><a class="dropdown-item" href="reqDonor">To donate blood</a></li>
-                  <li class="w-100"><hr class="dropdown-divider"></li>
-                  <li class="w-100"><a class="dropdown-item" href="reqForBlood">For blood</a></li>
-                </ul>
-              </li>
-            </ul>
-            <!-- <form class="d-flex" role="search"> -->
-              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-              <div class="d-flex justify-content-center">
-              <button class="d-flex btn btn-outline-danger" type="submit">Logout</button>
-              </div>
-            <!-- </form> -->
-          </div>
-        </div>
-      </nav>
-    <!--  -->
-
+<?php require_once "sidebar-donor.php";?>
 <main class="container-fluid px-0 pt-5 h-100 pb-0">
-<div class="w-100 text-center my-5">
-        <h4 class="fw-bold" style="color:rgba(219,138,222,1)">Add request for blood donation :</h4>
-      </div>
+  <div class="w-100 text-center my-5">
+    <h4 class="fw-bold" style="color:rgba(219,138,222,1)">Add request for blood donation :</h4>
+  </div>
   <div class="h-50">
- <!-- FORM ADD -->
-    <div class="add h-100 mx-auto p-3 col-11 col-sm-8 mt-5"  style="" id="add">
-              <form class="bg-white p-3 " action="" method="post" style="border: 2px solid gray;border-radius: 5px;" >
-                <div class="d-flex justify-content-end">
-                  <button type="button" class="plus text-danger " onclick="window.location.href='reqForBlood'" >X</i></button>
-                </div>
-                <!-- <div class="w-100 d-flex justify-content-center mb-2"><h3 style="color:rgba(219,138,222,1)">I need blood</h3></div> -->
-                <div class="row">
-                    <div class="mb-2 col-12 col-lg-6 "> 
-                        <label for="name" class="form-label text-secondary">Name </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
-                        <small></small>
-                    </div>
-                    <div class="mb-2 col-12 col-lg-6 "> 
-                        <label for="city" class="form-label text-secondary">City </label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter City">
-                        <small></small>  
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="mb-2 col-12 col-lg-6 "> 
-                            <label for="phone" class="form-label text-secondary">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter City">
-                            <small></small>  
-                        </div>
-                        <div class="mb-2 col-12 col-lg-6 "> 
-                        <label class="form-label text-secondary">Groupe </label>             
-                        <select  name="groupe" class="form-select" aria-label="Default select example">
-                            <option  value="A+">A+</option>
-                            <option  value="A-">A-</option>
-                            <option  value="B+">B+</option>
-                            <option  value="B-">B-</option>
-                            <option  value="AB+">AB+</option>
-                            <option  value="AB-">AB-</option>
-                            <option  value="O+">O+</option>
-                            <option  value="O-">O-</option>
-                        </select>                       
-                        <small></small>
-                    </div>
-                        
-                    </div>
-                    <!-- <div class="row">
-                        <div class="mb-2 col-12 col-lg-6 "> 
-                            <label for="phone" class="form-label text-secondary">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter City">
-                            <small></small>  
-                        </div>
-                        <div class="mb-2 col-12 col-lg-6 "> 
-                            <label for="date" class="form-label text-secondary">Befor </label>
-                            <input type="date" class="form-control" id="date" name="date" placeholder="Enter City">
-                            <small></small>  
-                        </div>
-                    </div> -->
-                    <div class="w-100 d-flex justify-content-center my-5">
-                  <input type="submit" class="btn text-white w-50" name="add" style="background-color: rgba(219,138,222,1)"   value="Save"> 
-                  </div>
+  <!-- FORM ADD -->
+  <div class="add h-100 mx-auto p-3 col-11 col-sm-8 mt-5"  style="" id="add">
+    <form class="bg-white p-3 " action="" method="post" style="border: 2px solid gray;border-radius: 5px;" >
+      <div class="d-flex justify-content-end">
+        <button type="button" class="plus text-danger " onclick="window.location.href='reqForBlood'" >X</i></button>
+      </div>
+      <div class="row">
+        <div class="mb-2 col-12 col-lg-6 "> 
+          <label for="name" class="form-label text-secondary">Name </label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+          <small></small>
+        </div>
+        <div class="mb-2 col-12 col-lg-6 "> 
+          <label for="city" class="form-label text-secondary">City </label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="Enter City">
+          <small></small>  
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-2 col-12 col-lg-6 "> 
+          <label for="phone" class="form-label text-secondary">Phone</label>
+          <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter City">
+          <small></small>  
+        </div>
+        <div class="mb-2 col-12 col-lg-6 "> 
+          <label class="form-label text-secondary">Groupe </label>             
+          <select  name="groupe" class="form-select" aria-label="Default select example">
+            <option  value="A+">A+</option>
+            <option  value="A-">A-</option>
+            <option  value="B+">B+</option>
+            <option  value="B-">B-</option>
+            <option  value="AB+">AB+</option>
+            <option  value="AB-">AB-</option>
+            <option  value="O+">O+</option>
+            <option  value="O-">O-</option>
+          </select>                       
+          <small></small>
+        </div>
+      </div>
+      <div class="w-100 d-flex justify-content-center my-5">
+        <input type="submit" class="btn text-white w-50" name="add" style="background-color: rgba(219,138,222,1)"   value="Save"> 
+      </div>
+    </form>
+  </div>
+  <!-- End FORM ADD -->
+</div>
 
-              </form>
-    </div>
-    <!-- End FORM ADD -->
-
-    </div>
-
-     <!-- Footer -->
+<!-- Footer -->
 <footer class="footer text-center text-lg-start bg-light text-muted">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -200,8 +139,7 @@ $reqs = $data->getAllRequests($_SESSION['id']);
   </footer>
   <!-- end Footer--> 
 </main>
-
-    <script src="./assets/js/my-bootstrap.js"></script>
-    <script src="./assets/js/formJS.js"></script>
+<script src="./assets/js/my-bootstrap.js"></script>
+<script src="./assets/js/formJS.js"></script>
 </body>
 </html>

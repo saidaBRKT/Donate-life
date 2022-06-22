@@ -1,4 +1,8 @@
 <?php
+// if(!isset($_SESSION["logged"])){
+//   header('location: signIn');
+//  die();
+// }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $newUser=new userController();
   $newUser->addUsers($_POST['role']);

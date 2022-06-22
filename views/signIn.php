@@ -1,4 +1,11 @@
 <?php
+// if(isset($_SESSION["logged"])){
+//   if($_SESSION["role"]=='admin')
+//     header('location: dashboard');
+//   if($_SESSION["role"]=='donor')
+//     header('location: pageDonor');
+// die();
+// }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $message="";
   if(empty($_POST['email']) || empty($_POST['password'])){
@@ -9,7 +16,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $u=$user->auth();
     var_dump($u);
     die();
-
   }
 }
 ?>

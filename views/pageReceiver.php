@@ -19,19 +19,19 @@ $nbr =$data->CountAllReqs($_SESSION['id']);
     <title>Document</title>
 </head>
 <body>
-  <?php require_once "views/includes/sidebar-donor.php"; ?>
-  <main class="container-fluid p-0  bg-light h-100 pt-5">
+  <?php require_once "sidebar-donor.php"; ?>
+  <main class="container-fluid px-0">
     <!-- content -->
-      <div class="container content">
-        <div class="profile bg-white h-100">
-          <div class="child1 w-100 d-flex justify-content-center bg-success">
-            <img src="./assets/images/welcome.gif" alt="welcome" height="100%" colss="col-8 col-lg-6">
+      <div class="container content bg-danger">
+        <div class="profile bg-light">
+          <div class="child1 d-flex justify-content-center">
+            <img src="./assets/images/profile.jfif" alt="">
           </div>
-          <div class="child2 d-flex flex-column justify-content-center ">
-            <div class="d-flex justify-content-center mb-3"><h4><?php echo $_SESSION['email'] ?></h4></div>
-            <div class="d-flex justify-content-center mb-3"><h1>We are glad to have you with us !</h1> </div> 
+          <div class="child2 d-flex flex-column justify-content-center pt-3 ">
+            <div class="d-flex justify-content-center"><h4><?php echo $_SESSION['email'] ?></h4></div>
+            <div class="d-flex justify-content-center"><h1>We are glad to have you with us !</h1> </div> 
           </div>
-          <div class="child3 d-flex justify-content-center align-item-center my-3">
+          <div class="child3 d-flex justify-content-center align-item-center h-25">
             <a href="tester" class="btn my-auto text-white fw-bold fs-5">Pass the test</a>
           </div>
         </div>
@@ -44,24 +44,12 @@ $nbr =$data->CountAllReqs($_SESSION['id']);
             <div class="card-body position-relative">
               <div class="d-flex position-absolute top-0">
                 <span class="me-2"><img src="assets/images/icons8-blood-donation-24.png" class="pb-1" alt="logo" width="30px" height="30px" /></span>
-                <span>Request to donate blood</span>
+                <span>Requests</span>
               </div>
               <div>
                 <span class="h5 fw-bold position-absolute top-50 start-50 translate-middle"><h2 style="color:#FF2156;"><?php echo $nbr[0] ?></h2></span>
               </div>
               <a href="donors" class="btn w-100 position-absolute bottom-0 start-0 w-100" style="color:#DC8CDB">View more ...</a>
-            </div>
-          </div>
-          <div class="col-11 col-md-8 col-lg-4 card bg-light col-md-3 mx-2 mb-2" style="height: 9rem;">
-            <div class=" card-body position-relative">
-              <div class="d-flex position-absolute top-0">
-                <span class="me-2"><img src="assets/images/icons8-donor-32.png" class="pb-1" alt="logo" width="30px" height="30px"/></span>
-                <span>Request for blood</span>
-              </div>
-              <div>
-                <span class="h5 fw-bold position-absolute top-50 start-50 translate-middle"><h2  style="color:gray;"><?php echo $nbrReqs[0] ?></h2></span>
-              </div>
-              <a href="reqForBlood" class="btn w-100 position-absolute bottom-0 start-0"style="color:#DC8CDB">View more ...</a>              
             </div>
           </div>
         </div>

@@ -1,20 +1,20 @@
 <?php
+// if(!isset($_SESSION["logged"])){
+//   header('location: signIn');
+//  die();
+// }
+if(isset($_POST['id'])){
+   $exitReqs = new requestsController();
+  $req = $exitReqs->getOneReqs();
+}
+else{
+  Redirect::to('reqForBlood');
+}
 
- 
-     if(isset($_POST['id'])){
-         $exitReqs = new requestsController();
-         $req = $exitReqs->getOneReqs();
-    }
-    else{
-       Redirect::to('reqForBlood');
-    }
-    
-    
-    if(isset($_POST['update'])){
-       $exitReqs = new requestsController();
-       $exitReqs->updateReqs($_SESSION['id']);
-  }
-  
+if(isset($_POST['update'])){
+  $exitReqs = new requestsController();
+  $exitReqs->updateReqs($_SESSION['id']);
+}  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,10 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/my-bootstrap.css">
     <link rel="stylesheet" href="./assets/css/styleDonor.css">
-    <!-- <link rel="stylesheet" href="./assets/css/formStyle.css"/> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    
-    <title>Document</title>
+    <title>Update Request</title>
 </head>
 <body>
     <!-- nav -->
@@ -69,26 +67,23 @@
         </div>
       </nav>
     <!--  -->
-    <!--  -->
 <main class="container-fluid px-0 h-100 bg-light pb-0">
     <!-- content -->
       <div class="container">
-      <div class="container ">
-       <div>
-       <div class="d-flex justify-content-between">
-        <div>
-        <h1>Requests :</h1>
-        </div>
-        <div>
-        <a href="#" class="d-flex d-md-none  h-100 text-danger bg-white" onclick="displayADD()"><i class="bi bi-plus h-100  px-2" style=""></i></a>
-        <a href="#" class="btn p-0 h-100 w-100 d-none d-md-flex" onclick="displayADD()" ><h4 class="h-100 pt-2 px-3" style="color:#FF2156;border:1px solid #FF2156;border-radius:5px">Add Request</h4></a>
-        </div>
-      </div>
-
-
-      <!-- FORM UPDATE -->
+        <div class="container ">
+          <div>
+            <div class="d-flex justify-content-between">
+              <div>
+                <h1>Requests :</h1>
+              </div>
+              <div>
+                <a href="#" class="d-flex d-md-none  h-100 text-danger bg-white" onclick="displayADD()"><i class="bi bi-plus h-100  px-2" style=""></i></a>
+                <a href="#" class="btn p-0 h-100 w-100 d-none d-md-flex" onclick="displayADD()" ><h4 class="h-100 pt-2 px-3" style="color:#FF2156;border:1px solid #FF2156;border-radius:5px">Add Request</h4></a>
+              </div>
+            </div>
+            <!-- FORM UPDATE -->
       
-<div class="h-100 mx-auto p-3 col-11 col-sm-8 mt-5"  style="" id="UPDATE">
+            <div class="h-100 mx-auto p-3 col-11 col-sm-8 mt-5"  style="" id="UPDATE">
               <form class="bg-white p-3 " action="" method="post" style="border: 2px solid gray;border-radius: 5px;" >
                 <div class="d-flex justify-content-end">
                   <button type="button" class="plus text-danger " onclick="window.location.href='reqForBlood'" >X</i></button>
@@ -96,14 +91,14 @@
                 <div class="w-100 d-flex justify-content-center mb-2"><h3 style="color:rgba(219,138,222,1)">I need blood</h3></div>
                 <div class="row">
                     <div class="mb-2 col-12 col-lg-6 "> 
-                        <label for="name" class="form-label text-secondary">For </label>
-                        <input type="text" class="form-control" id="name" name="name" value="<?php echo $req->name; ?>">
-                        <small></small>
+                      <label for="name" class="form-label text-secondary">For </label>
+                      <input type="text" class="form-control" id="name" name="name" value="<?php echo $req->name; ?>">
+                      <small></small>
                     </div>
                     <div class="mb-2 col-12 col-lg-6 "> 
-                        <label for="city" class="form-label text-secondary">City </label>
-                        <input type="text" class="form-control" id="city" name="city" value="<?php echo $req->city; ?>" >
-                        <small></small>  
+                      <label for="city" class="form-label text-secondary">City </label>
+                      <input type="text" class="form-control" id="city" name="city" value="<?php echo $req->city; ?>" >
+                      <small></small>  
                     </div>
                 </div>
                    <div class="row d-flex justify-content-center my-4">
@@ -111,24 +106,23 @@
                       <label  class="form-label text-secondary d-flex justify-content-around">He needs </label>
                       <div class="d-flex justify-content-around">
                         <div class="">
-                            <input type="radio" id="blood" name="type" value="Blood"  <?php echo ($req->type === 'Blood') ? 'checked': '';?> >
-                            <label for="blood">Blood</label><br>
+                          <input type="radio" id="blood" name="type" value="Blood"  <?php echo ($req->type === 'Blood') ? 'checked': '';?> >
+                          <label for="blood">Blood</label><br>
                         </div>    
                         <div class="">
-                            <input type="radio" id="platelets " name="type" value="platelets"  <?php echo ($req->type === 'platelets') ? 'checked': '';?> >
-                            <label for="platelets ">platelets </label><br>
+                          <input type="radio" id="platelets " name="type" value="platelets"  <?php echo ($req->type === 'platelets') ? 'checked': '';?> >
+                          <label for="platelets ">platelets </label><br>
                         </div>    
                       </div>
                      </div>
-                    </div>
-                    
+                    </div>               
                     <div class="row">
                         <div class="mb-2 col-12 col-lg-6 "> 
                             <label class="form-label text-secondary">Who has an </label>
                             <select  name="case" class="form-select" aria-label="Default select example">
-                                <option  value="Emergency" <?php echo ($req->case === 'Emergency') ? 'selected': '';?> >Emergency</option>
-                                <option  value="Chronic disease" <?php echo ($req->case === 'Chronic disease') ? 'selected': '';?> >Chronic disease</option>
-                                <option  value="Surgery" <?php echo ($req->case === 'Surgery') ? 'selected': '';?> >Surgery</option>
+                              <option  value="Emergency" <?php echo ($req->case === 'Emergency') ? 'selected': '';?> >Emergency</option>
+                              <option  value="Chronic disease" <?php echo ($req->case === 'Chronic disease') ? 'selected': '';?> >Chronic disease</option>
+                              <option  value="Surgery" <?php echo ($req->case === 'Surgery') ? 'selected': '';?> >Surgery</option>
                             </select>                        
                             <small></small>
                         </div>
@@ -145,45 +139,36 @@
                             <option  value="O-" <?php echo ($req->groupe === 'O-') ? 'selected': '';?> >O-</option>
                         </select>                       
                         <small></small>
+                    </div>             
+                  </div>
+                  <div class="row">
+                    <div class="mb-2 col-12 col-lg-6 "> 
+                        <label for="phone" class="form-label text-secondary">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $req->phone; ?>">
+                        <small></small>  
                     </div>
-                        
+                    <div class="mb-2 col-12 col-lg-6 "> 
+                        <label for="date" class="form-label text-secondary">Befor </label>
+                        <input type="date" class="form-control" id="date" name="date" value="<?php echo $req->date; ?>">
+                        <small></small>  
                     </div>
-                    <!--  -->
-                    <div class="row">
-                        <div class="mb-2 col-12 col-lg-6 "> 
-                            <label for="phone" class="form-label text-secondary">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $req->phone; ?>">
-                            <small></small>  
-                        </div>
-                        <div class="mb-2 col-12 col-lg-6 "> 
-                            <label for="date" class="form-label text-secondary">Befor </label>
-                            <input type="date" class="form-control" id="date" name="date" value="<?php echo $req->date; ?>">
-                            <small></small>  
-                        </div>
-                    </div>
-                    <!--  -->
-                    <form method="POST">
-                <input type="hidden" name="id" value="<?php echo  $req->id;?>">
+                  </div>
+                  <form method="POST">
+                    <input type="hidden" name="id" value="<?php echo  $req->id;?>">
                     <div class="w-100 d-flex justify-content-center my-5">
-                  <input type="submit" class="btn text-white w-50" name="update" style="background-color: rgba(219,138,222,1)"   value="Save"> 
-                  <!-- <input type="submit" class="btn text-white w-100" name="update" style="background-color: #12CE81"   value="Update">   -->
-                </div>
+                       <input type="submit" class="btn text-white w-50" name="update" style="background-color: rgba(219,138,222,1)"   value="Save"> 
+                    </div>
+                  </form>
                 </form>
-              </form>
+              </div>
+              <!-- END FORM UPDATE -->
+             <div class="mt-4">
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- END FORM UPDATE -->
-      <div class="mt-4">
-        
 
-        <!--  -->
-      </div>
-    </div>
-  </div>
-      </div>
-    <!-- cards -->
-   
-    <!-- End cards --
-     <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer text-center text-lg-start bg-light text-muted bg-danger">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -252,17 +237,7 @@
   </footer>
   <!-- end Footer--> 
 </main>
-
-    <script src="./assets/js/my-bootstrap.js"></script>
-    <script src="./assets/js/formJS.js"></script>
-    <script>
-      function displayUP(){
-    document.getElementById("UPDATE").style.display="block"
-}
-
-function displayUpNone(){
-    document.getElementById("UPDATE").style.display="none"
-}
-    </script>
+<script src="./assets/js/my-bootstrap.js"></script>
+<script src="./assets/js/formJS.js"></script>
 </body>
 </html>

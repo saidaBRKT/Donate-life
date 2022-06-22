@@ -7,9 +7,9 @@ li{
     width: 100%;
     font-size:larger;
 }
-.child1 img{
-    border-radius: 50%;
-}
+/* .child1 img{
+    border-radius: 50%; 
+} */
 main{
     padding: 100px;
     height:90vh;
@@ -23,6 +23,7 @@ main{
  }
  .child1{
     padding-top: 20px;
+    height:500px;
  }
  .child2{
     border-bottom:3px solid gray;
@@ -40,7 +41,6 @@ main{
   .lesCards{
     margin-top: 100px;
   }
-
 @media (min-width:992px) {
     ul{
         margin-left: 50px;
